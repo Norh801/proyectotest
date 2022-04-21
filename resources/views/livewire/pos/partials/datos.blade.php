@@ -28,9 +28,9 @@
                                             Efectivo
                                         </span>
                                     </div>
-                                    <input type="tel" id="cash" wire:model="efectivo" class="form-control text-center" value=' '>
+                                    <input type="number" id="cash" wire:model="efectivo" class="form-control text-center" value=' ' min="0">
                                     <div class="input-group-append">
-                                        <span wire:click="$set('efectivo',0)" class="input-group-text" style="background-color: #3b3f5c; color: white">
+                                        <span wire:click="setZero()" class="input-group-text" style="background-color: #3b3f5c; color: white">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-delete"><path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"></path><line x1="18" y1="9" x2="12" y2="15"></line><line x1="12" y1="9" x2="18" y2="15"></line></svg>
                                         </span>
                                     </div>

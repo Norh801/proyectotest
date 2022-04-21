@@ -27,11 +27,17 @@ class PosController extends Component
         $this->itemsQuantity = Cart::getTotalQuantity();
     }
 
+    public function setZero(){
+        $this->efectivo=0;
+        $this->change=0;
+    }
+
+
     public function render()
     {
 
         if($this->efectivo > 0){
-            if($this->efectivo - $this->total <0){
+            if($this->efectivo - $this->total <=0){
                 $this->change = 0;
             }else{
                 $this->change =$this->efectivo - $this->total;
