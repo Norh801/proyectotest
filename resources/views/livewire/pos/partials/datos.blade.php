@@ -49,11 +49,9 @@
                             <div class="col-sm-12 col-md-12">
                                 <div class="form-group">
                                     <select id="code" class="form-control nested" style="width:100%!important;" wire:model='productCode'>
-                                        <div>
                                             @foreach ($data as $product)
                                                 <option value="{{$product->code}}">{{$product->name}}</option>
                                             @endforeach
-                                        </div>
                                     </select>
                                 </div>
                             </div>
