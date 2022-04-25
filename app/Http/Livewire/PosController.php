@@ -7,7 +7,6 @@ use App\Models\Sale;
 use App\Models\SaleDetail;
 use Darryldecode\Cart\Facades\CartFacade as Cart;
 use Exception;
-use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
