@@ -20,7 +20,7 @@ class PosController extends Component
     {
 
         $this->efectivo=0;
-
+        $this->productCode = 1;
         $this->total= Cart::getTotal();
         $this->change= 0;
         $this->itemsQuantity = Cart::getTotalQuantity();
@@ -68,7 +68,7 @@ class PosController extends Component
 
     public function ScanCode()
     {
-        dd($this->productCode);
+        
         $product = Product::where('code',$this->productCode)->first();
 
         if($product==null)
