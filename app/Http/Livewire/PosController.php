@@ -69,7 +69,7 @@ class PosController extends Component
 
     public function ScanCode($Pcode)
     {
-
+        $cant =1;
         $product = Product::where('code',$Pcode)->first();
 
         if($product==null)
