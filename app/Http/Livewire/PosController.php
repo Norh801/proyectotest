@@ -68,7 +68,7 @@ class PosController extends Component
 
     public function ScanCode()
     {
-        
+        dd($this->productCode);
         $product = Product::where('code',$this->productCode)->first();
 
         if($product==null)
