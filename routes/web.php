@@ -24,7 +24,7 @@ Auth::routes();
 
 
 
-Route::middleware(['auth'])->group(function(){
+Route::middleware(['auth:web'])->group(function(){
 
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
         Route::group(['middleware' => ['role:Employee|Admin']],function() {
@@ -34,7 +34,7 @@ Route::middleware(['auth'])->group(function(){
 
         Route::get('/products', [\App\Http\Livewire\ProductsController::class, '__invoke'])->name('products');
 
-        Route::get('/sales', [\App\Http\Livewire\PosController::class, '__invoke'])->name('sales')->middleware('web');
+        Route::get('/sales', [\App\Http\Livewire\PosController::class, '__invoke'])->name('sales');
 
 
 
