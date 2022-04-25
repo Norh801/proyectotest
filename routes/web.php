@@ -34,7 +34,7 @@ Route::middleware(['auth'])->group(function(){
 
         Route::get('/products', [\App\Http\Livewire\ProductsController::class, '__invoke'])->name('products');
 
-        Route::get('/sales', [\App\Http\Livewire\PosController::class, '__invoke'])->name('sales');
+        Route::get('/sales', [\App\Http\Livewire\PosController::class, '__invoke'])->middleware('web')->name('sales');
 
 
 
