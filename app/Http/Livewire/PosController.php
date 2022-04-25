@@ -20,7 +20,8 @@ class PosController extends Component
     {
 
         $this->efectivo=0;
-        $this->productCode = 1;
+        $this->code='';
+        $this->customer='';
         $this->total= Cart::getTotal();
         $this->change= 0;
         $this->itemsQuantity = Cart::getTotalQuantity();
@@ -256,6 +257,8 @@ class PosController extends Component
             $this->efectivo=0;
             $this->change=0;
             $this->total = Cart::getTotal();
+            $this->customer='';
+            $this->code='';
             $this->itemsQuantity = Cart::getTotalQuantity();
 
             $this->emit('sale-ok', 'Venta registrada con exito');
@@ -266,9 +269,5 @@ class PosController extends Component
             $this->emit('sale-error', $e->getMessage());
 
         }
-    }
-
-    public function printTicket($sale){
-        return Redirect::to("print://$sale->id");
     }
 }
