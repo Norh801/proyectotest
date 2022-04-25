@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'asset_url' => null,
+    'asset_url' => 'https://yorsystem-3ogoa.ondigitalocean.app/',
 
     /*
     |--------------------------------------------------------------------------
@@ -68,7 +68,7 @@ return [
     |
     */
 
-    'app_url' => 'https://yorsystem-3ogoa.ondigitalocean.app/',
+    'app_url' => null,
 
     /*
     |--------------------------------------------------------------------------
