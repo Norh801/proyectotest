@@ -68,7 +68,7 @@ return [
     |
     */
 
-    'app_url' => null,
+    'app_url' => 'https://yorsystem-3ogoa.ondigitalocean.app/',
 
     /*
     |--------------------------------------------------------------------------
