@@ -24,7 +24,7 @@ Auth::routes();
 
 
 
-Route::middleware(['auth:web'])->group(function(){
+Route::middleware(['auth'])->group(function(){
 
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
         Route::group(['middleware' => ['role:Employee|Admin']],function() {
