@@ -55,7 +55,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-12 col-sm-12 mb-3">
-                                <button wire:click.prevent="$emit('scan-code', $('#code').val())" type="button" class="btn btn-outline-dark mb-2" id="agregar">
+                                <button wire:click.prevent="$emit('scan-code', $('#codeP').val())" type="button" class="btn btn-outline-dark mb-2" id="agregar">
                                     Agregar (Shift a)
                                 </button>
                             </div>
