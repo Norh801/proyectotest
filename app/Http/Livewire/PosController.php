@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Redirect;
 
 class PosController extends Component
 {
-    public $total,$itemsQuantity,$efectivo,$change, $customer, $code;
+    public $total,$itemsQuantity,$efectivo,$change, $customer, $code, $productCode;
 
 
     public function mount()
@@ -35,6 +35,9 @@ class PosController extends Component
     public function render()
     {
 
+        $products = Product::join('categories as c', 'c.id', 'products.category_id')
+                        ->select('products.*', 'c.name as category')->orderBy('products.name', 'asc')
+                        ->get();
         if($this->efectivo > 0){
             if($this->efectivo - $this->total <=0){
                 $this->change = 0;
@@ -42,7 +45,8 @@ class PosController extends Component
                 $this->change =$this->efectivo - $this->total;
             }
         }
-        return view('livewire.pos.component', ['cart' => Cart::getContent()->sortBy('name')])
+        return view('livewire.pos.component', ['cart' => Cart::getContent()->sortBy('name'),
+        'data' => $products])
         ->extends('layouts.theme.app')
         ->section('content');
     }
@@ -62,10 +66,10 @@ class PosController extends Component
         'saveSale' => 'saveSale'
     ];
 
-    public function ScanCode($code, $cant =1)
+    public function ScanCode()
     {
 
-        $product = Product::where('code', $code)->first();
+        $product = Product::where('code', $this->productCode)->first();
 
         if($product==null)
         {
@@ -103,7 +107,8 @@ class PosController extends Component
         }
     }
 
-    public function increaseQty($productId, $cant=1){
+    public function increaseQty($productId){
+        $cant=1;
         $title='';
         $product = Product::find($productId);
         $exist = Cart::get($productId);
