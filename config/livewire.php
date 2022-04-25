@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'asset_url' => 'https://yorsystem-3ogoa.ondigitalocean.app/',
+    'asset_url' => 'public',
 
     /*
     |--------------------------------------------------------------------------
