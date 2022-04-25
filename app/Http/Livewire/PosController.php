@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Redirect;
 
 class PosController extends Component
 {
-    public $total,$itemsQuantity,$efectivo,$change, $customer, $code, $productCode;
+    public $total,$itemsQuantity,$efectivo,$change, $customer, $code;
 
 
     public function mount()
@@ -66,10 +66,10 @@ class PosController extends Component
         'saveSale' => 'saveSale'
     ];
 
-    public function ScanCode()
+    public function ScanCode($Pcode)
     {
-        dd($this->productCode);
-        $product = Product::where('code',$this->productCode)->first();
+
+        $product = Product::where('code',$Pcode)->first();
 
         if($product==null)
         {

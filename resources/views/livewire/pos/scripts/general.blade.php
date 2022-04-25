@@ -4,6 +4,11 @@
 
     $(".nested").select2();
 
+    function addCart()
+    {
+        var codeP = $("#codeP").value;
+        window.livewire.emit('scan-code', codeP)
+    }
 
     function Confirm(id, eventName, text)
     {
