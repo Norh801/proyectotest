@@ -19,12 +19,11 @@ return new class extends Migration
             $table->integer('items');
             $table->decimal('total',10,2);
             $table->decimal('cash', 10,2);
-            $table->string('change', 10,2);
+            $table->decimal('change', 10,2);
             $table->enum('status',['PAID', 'PENDING', 'CANCELLED'])->default('PAID');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('customer')->required();
-            $table->dateTime('sale_date');
             $table->decimal('tax',5,2);
             $table->timestamps();
         });

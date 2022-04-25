@@ -1,25 +1,19 @@
-<ul class="navbar-item flex-row search-ul">
-    <li class="nav-item align-self-center search-animated">
-        <form class="form-inline search-full form-inline search" role="search">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search toggle-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            <div class="search-bar ml-5">
-                <select id="code" wire:keydown.enter.prevent="$emit('scan-code', $('#code').val())" class="form-control">
-                    <option value="Elegir" disabled>Elegir</option>
-                    @foreach ($data as $product)
-                        <option value="{{$product->code}}">{{$product->name}}</option>
-                    @endforeach
-                </select>
+
+<div>
+<div class="col-sm-12 col-md-12">
+    <div class="form-group">
+        <select id="code" class="form-control nested" style="width:100%!important;">
+            <div>
+                @foreach ($data as $product)
+                    <option value="{{$product->code}}">{{$product->name}}</option>
+                @endforeach
             </div>
-        </form>
-    </li>
-</ul>
-
-
-<script>
-    document.addEventListener('DOMContentLoaded',function(){
-        window.livewire.on('scan-code', action=>{
-            $('#code').val('');
-        });
-    });
-
-</script>
+        </select>
+    </div>
+</div>
+<div class="col-lg-12 col-sm-12 mb-3">
+    <button wire:click.prevent="$emit('scan-code', $('#code').val())" type="button" class="btn btn-outline-dark mb-2" id="agregar">
+        Agregar (Shift a)
+    </button>
+</div>
+</div>

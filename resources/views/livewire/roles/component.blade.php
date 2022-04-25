@@ -56,6 +56,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <div>
                                     @foreach ($roles as $rol)
 
 
@@ -69,12 +70,13 @@
                                                     class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2 p-1 br-6 mb-1"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></a></li>
 
                                                     <li><a href="javascript:void(0);"
-                                                    onclick="Confirm('{{$rol->id}}','{{$rol->products->count()}}')"
+                                                    onclick="Confirm('{{$rol->id}}')"
                                                     class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash p-1 br-6 mb-1"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></a></li>
                                             </ul>
                                         </td>
                                     </tr>
                                     @endforeach
+                                </div>
                                 </tbody>
 
                             </table>
@@ -86,9 +88,7 @@
         </div>
     </div>
 
-    @include('livewire.category.form')
-</div>
-
+    @include('livewire.roles.form')
 
 <script>
     document.addEventListener('DOMContentLoaded',function(){
@@ -120,12 +120,8 @@
         });
     });
 
-    function Confirm(id, products)
+    function Confirm(id)
     {
-        if(products>0){
-            swal("Alerta", "No se puede eliminar la categoria, porque tiene productos relacionados", "warning");
-            return;
-        }
         swal({
             type: 'warning',
             title: 'Confirmar',
@@ -137,9 +133,12 @@
             confirmButtonText: 'Aceptar',
         }).then(function(result){
             if(result.value){
-                window.livewire.emit('deleteRow', id)
+                window.livewire.emit('destroy', id)
                 swal.close()
             }
         })
     }
 </script>
+
+</div>
+

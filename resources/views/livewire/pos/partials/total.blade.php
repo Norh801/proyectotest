@@ -25,14 +25,14 @@
                                 <div class="col-sm-12 col-md-12 col-lg-6">
                                     @if ($total>0)
                                         <button onclick="Confirm('','clearCart','¿Seguro de eliminar el carrito?')" class="btn btn-dark mtmobile">
-                                            Cancelar
+                                            Cancelar (F4)
                                         </button>
                                     @endif
                                 </div>
                                 <div class="col-sm-12 col-md-12 col-lg-6">
                                     @if ($efectivo>=$total && $total>0)
                                         <button wire:click.prevent='saveSale' class="btn btn-dark btn-md btn-block">
-                                            Guardar
+                                            Guardar (F9)
                                         </button>
                                     @endif
                                 </div>

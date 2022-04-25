@@ -38,7 +38,10 @@
         <!--  BEGIN CONTENT AREA  -->
         <div id="content" class="main-content">
             <div class="layout-px-spacing">
-                @yield('content')
+                <div>
+                    @yield('content')
+                </div>
+
             </div>
             @include('layouts.theme.footer')
         </div>

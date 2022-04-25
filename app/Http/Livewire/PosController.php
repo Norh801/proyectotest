@@ -51,6 +51,7 @@ class PosController extends Component
     public function ACash($value){
         if($value ==0){
             $this->efectivo = number_format($this->total,2);
+            $this->change=0;
         }
 
     }
@@ -254,7 +255,6 @@ class PosController extends Component
             $this->itemsQuantity = Cart::getTotalQuantity();
 
             $this->emit('sale-ok', 'Venta registrada con exito');
-            $this->emit('print-ticket', $sale->id);
 
         } catch (Exception $e) {
             //throw $th;

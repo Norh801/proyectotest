@@ -18,10 +18,10 @@
 
 </div>
 
-
+@include('livewire.pos.scripts.events')
+@include('livewire.pos.scripts.general')
+@include('livewire.pos.scripts.shorcuts')
 </div>
 
 
-@include('livewire.pos.scripts.events')
-@include('livewire.pos.scripts.general')
 

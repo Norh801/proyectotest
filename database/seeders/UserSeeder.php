@@ -20,17 +20,17 @@ class UserSeeder extends Seeder
             'name' => 'Oskar',
             'phone' => '954173405',
             'email' => 'oskarcg801@gmail.com',
-            'profile' => 'ADMIN',
+            'profile' => '1',
             'status' => 'ACTIVE',
             'password' => bcrypt('admin'),
-        ]);
+        ])->assignRole('Admin');
         User::create([
             'name' => 'Oscar Torres',
             'phone' => '985461371',
             'email' => 'oscar.grimaldo@umnsm.edu.pe',
-            'profile' => 'EMPLOYEE',
+            'profile' => '2',
             'status' => 'ACTIVE',
             'password' => bcrypt('admin'),
-        ]);
+        ])->assignRole('Employee');
     }
 }

@@ -109,6 +109,8 @@ class CategoriesController extends Component
         $this->name='';
         $this->search='';
         $this->selected_id=0;
+        $this->resetValidation();
+        $this->resetPage();
     }
 
     protected $listeners = [

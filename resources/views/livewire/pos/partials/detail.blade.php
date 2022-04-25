@@ -19,6 +19,7 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <div>
                             @foreach ($cart as $item)
                             <tr>
                                 <td class="text-center table-th">
@@ -57,6 +58,7 @@
                                 </td>
                             </tr>
                             @endforeach
+                            </div>
                         </tbody>
                     </table>
                 </div>
@@ -70,5 +72,6 @@
             </div>
         </div>
     </div>
+
 </div>
 

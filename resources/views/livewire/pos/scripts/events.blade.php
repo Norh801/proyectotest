@@ -14,8 +14,10 @@
         window.livewire.on('sale-error', msg=>{
             noty(msg);
         });
-        window.livewire.on('print-ticket', saleId=>{
-            window.open("print://"+saleId,'_blank')
+
+        window.livewire.on('sale-ok', msg=>{
+            noty(msg);
         });
+        
     });
 </script>
